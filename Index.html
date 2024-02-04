@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Watch Series 9 - Apple</title>
+    <link rel="stylesheet" href="ur.css">
+    <link rel="stylesheet" href="animi.css">
+</head>
+<body>
+    <header>
+        <ul>
+            <li><img src="Img/icons8-apple-30.png" alt="apple logo" style="width: 15px;"></li>
+            <li>Store</li>
+            <li>Mac</li>
+            <li>iPad</li>
+            <li>Watch</li>
+            <li>Vision</li>
+            <li>AirPods</li>
+            <li>TV & Home</li>
+            <li>Entertainment</li>
+            <li>Accessories</li>
+            <li>Support</li>
+            <li><img src="Img/icons8-search-50.png" alt="" id="im"></li>
+            <li><img src="Img/icons8-bag-48.png" alt="" id="im"></li>
+        </ul>
+    </header>
+    <div id="miniHeader">
+        <div id="cover"><p id="t1" style="float: left;">Apple Watch Series 9</p> &nbsp;&nbsp;<p id="t1" style="float: right;">Overview : Why Apple Watch <button id="btnOne">Buy</button></p></div>
+    </div>
+    <div id="animationCover">
+        <div id="circle">
+            <p id="t5">
+                Go deeper on A17 Pro 
+            </p>
+            <div id="circleTwo">
+                +
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div id="view">
+            <div id="v1">
+                <img src="Img/logo_watch_series_9__7r0mmui9tc2y_large.png" alt="">
+            </div>
+            <div id="v2">
+                <div id="coverTwo">
+                    <p id="t2">Smarter. <br> Brighter. <br>Mightier. </p> <br> <br>
+                    
+                    <p id="t3">
+                        Our most powerful chip in Apple Watch ever. A magical new way to use your Apple Watch without touching the screen. A display that’s twice as bright. And now you can choose a watch case and band combination that’s carbon neutral.
+                    </p>
+                        
+            
+                </div>
+                
+              
+            </div>
+            <div id="backVideo">
+                <video src="Img/large_2x.mp4" autoplay muted id="vd1"></video>
+            </div>
+      
+        </div>
+       
+    </div>
+
+    <script>
+      
+        var x = document.getElementById('miniHeader');
+           var hiddenText=document.getElementById('t2');
+           var hiddenVd=document.getElementById('vd1');
+           var hiddentext=document.getElementById('t3');
+           var animiii=document.getElementById('circle');
+           
+        document.addEventListener('scroll', myFunction);
+        function myFunction() {
+              //header
+            if (window.scrollY <= 25) {
+                x.style.position="static";
+                x.style.backgroundImage="none";
+                animiii.style.opacity="0%";
+                animiii.style.position="static";
+                animiii.style.animation = "none";
+                void animiii.offsetWidth;
+            }
+            else{
+                x.style.position = "fixed";
+                x.style.top="0%";
+                x.style.backgroundImage="linear-gradient(to right,#0D0C0F,#262626)";
+                x.style.transition="0.4s";
+                animiii.style.opacity="100%";
+                animiii.style.animation="seenEka 4s alternate";
+                animiii.style.position="fixed";
+              
+            }
+           //text animation
+            var scrollTop = window.scrollY;
+            var windowHeight = window.innerHeight;
+            var textOffset = hiddenText.offsetTop;
+            var opacity = 1 - 10*((textOffset - scrollTop) / windowHeight);
+            var reverseOpacity = 1 - opacity;
+            hiddenVd.style.opacity = Math.min(1, Math.max(0, reverseOpacity));
+            hiddenText.style.opacity = Math.min(1, Math.max(0, reverseOpacity));
+            hiddentext.style.opacity = Math.min(1, Math.max(0, opacity));
+
+      
+        }
+        
+    </script>
+</body>
+</html>
